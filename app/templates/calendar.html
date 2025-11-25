@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>캘린더 요약 ({{ summary.year }}년 {{ summary.month }}월)</h2>
+
+  {% if summary.days %}
+    <table border="1" cellpadding="4" cellspacing="0">
+      <thead>
+        <tr>
+          <th>날짜</th>
+          <th>사진 개수</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for day in summary.days %}
+          <tr>
+            <td>{{ day }}</td>
+            <td>{{ summary.count_by_day[day|string] }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>해당 월에 사진이 없습니다.</p>
+  {% endif %}
+{% endblock %}

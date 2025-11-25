@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ title or "Family Photo Service" }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+  <div class="app-root">
+    <header class="app-header">
+      <div class="brand">
+        <span class="logo">📸</span>
+        <span class="brand-text">Family Photo Service</span>
+      </div>
+      <nav class="app-nav">
+        <a href="{{ url_for('index_page') }}">홈</a>
+        <a href="{{ url_for('upload_page') }}">업로드</a>
+        <a href="{{ url_for('gallery_page') }}">갤러리</a>
+        <a href="{{ url_for('calendar_page') }}">캘린더</a>
+      </nav>
+    </header>
+
+    <main class="app-main">
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="app-footer">
+      <span>© {{ now().year if now else 2025 }} Family Photo Service</span>
+    </footer>
+  </div>
+</body>
+</html>

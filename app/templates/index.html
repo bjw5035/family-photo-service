@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+  <!-- <h2>홈</h2>
+  <p>가족 사진을 업로드하고, 갤러리와 캘린더로 확인할 수 있는 서비스입니다.</p>
+
+  <ul>
+    <li><a href="{{ url_for('upload_page') }}">사진 업로드</a></li>
+    <li><a href="{{ url_for('gallery_page') }}">갤러리 보기</a></li>
+    <li><a href="{{ url_for('calendar_page') }}">이번 달 캘린더</a></li>
+  </ul> -->
+  <div class="card">
+    <h2>홈</h2>
+    <p>가족 사진을 업로드하고, 갤러리와 캘린더로 확인할 수 있는 서비스입니다.</p>
+
+    <ul class="feature-list">
+      <li><a href="{{ url_for('upload_page') }}"></a>📤 사진 업로드 후 자동 저장</li>
+      <li><a href="{{ url_for('gallery_page') }}"></a>🖼 갤러리에서 한 번에 모아보기</li>
+      <li><a href="{{ url_for('calendar_page') }}"></a>📅 촬영일 기준 월별 캘린더 요약</li>
+    </ul>
+  </div>
+{% endblock %}

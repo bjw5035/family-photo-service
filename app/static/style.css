@@ -1,0 +1,234 @@
+/* 전체 레이아웃 */
+body {
+  margin: 0;
+  padding: 0;
+  background: #0f172a;          /* 다크 네이비 */
+  color: #e5e7eb;               /* 밝은 회색 */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 헤더 / 네비게이션 */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: #020617;
+  border-bottom: 1px solid #1f2937;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo {
+  font-size: 22px;
+}
+
+.brand-text {
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+}
+
+.app-nav a {
+  margin-left: 16px;
+  text-decoration: none;
+  color: #9ca3af;
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.app-nav a:first-child {
+  margin-left: 0;
+}
+
+.app-nav a:hover {
+  background: #1f2937;
+  color: #e5e7eb;
+}
+
+/* 메인 / 컨텐츠 */
+
+.app-main {
+  padding: 24px;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.app-main h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.app-main p {
+  margin: 4px 0 8px;
+}
+
+/* 카드 느낌의 섹션 */
+.card {
+  background: #020617;
+  border-radius: 12px;
+  border: 1px solid #1f2937;
+  padding: 16px 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* 홈 화면용 목록 */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+
+.feature-list li {
+  margin-bottom: 8px;
+}
+
+/* 폼 / 버튼 */
+
+form {
+  margin-top: 12px;
+}
+
+label {
+  font-size: 14px;
+}
+
+input[type="file"] {
+  margin-top: 4px;
+  color: #e5e7eb;
+}
+
+button {
+  margin-top: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #4b5563;
+  background: #111827;
+  color: #e5e7eb;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+
+button:hover {
+  background: #1f2937;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* 갤러리 */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.photo-card {
+  background: #020617;
+  border-radius: 12px;
+  border: 1px solid #1f2937;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.photo-card .thumb {
+  background: #020617;
+  max-height: 200px;
+  overflow: hidden;
+}
+
+.photo-card .thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+}
+
+.photo-card:hover .thumb img {
+  transform: scale(1.03);
+}
+
+.photo-card .info {
+  padding: 10px 12px 12px;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.photo-card .info div {
+  margin-bottom: 2px;
+}
+
+/* 캘린더 테이블 */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+th,
+td {
+  border: 1px solid #1f2937;
+  padding: 6px 8px;
+  text-align: left;
+}
+
+th {
+  background: #111827;
+}
+
+/* 푸터 */
+
+.app-footer {
+  margin-top: auto;
+  padding: 10px 24px 16px;
+  font-size: 12px;
+  color: #6b7280;
+  text-align: center;
+  border-top: 1px solid #1f2937;
+  background: #020617;
+}
+
+/* 반응형 (모바일) */
+
+@media (max-width: 640px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .app-main {
+    padding: 16px;
+  }
+
+  .app-nav a {
+    margin-left: 0;
+    margin-right: 8px;
+  }
+}
