@@ -1,0 +1,15 @@
+# 일반적인 로그/임시 파일
+*.log
+*.tmp
+*.swp
+
+# Python 예시
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node 예시
+node_modules/
+dist/
+build/
