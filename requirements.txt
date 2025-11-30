@@ -16,3 +16,5 @@ Pillow==10.4.0
 
 # .env 파일을 환경변수로 로드 (개발 편의)
 python-dotenv==1.0.1
+
+jinja2==3.1.4
