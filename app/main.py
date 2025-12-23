@@ -263,4 +263,5 @@ async def crash():
     """강제로 예외 발생 (테스트용)"""
     # raise ValueError("This is a test crash")
     # raise RuntimeError("This is a test crash")
-    os.kill(1, signal.SIGKILL)  # 강제 프로세스 종료
+    # os.kill(1, signal.SIGKILL)  # 강제 프로세스 종료
+    os._exit(1)  # 강제 프로세스 종료
