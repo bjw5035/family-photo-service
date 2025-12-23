@@ -255,3 +255,9 @@ async def calendar_month(year: int, month: int):
 async def metrics():
     """Prometheus 메트릭 엔드포인트"""
     return PlainTextResponse(generate_latest(), media_type=CONTENT_TYPE_LATEST)
+
+@app.get("/crash")
+async def crash():
+    """강제로 예외 발생 (테스트용)"""
+    # raise ValueError("This is a test crash")
+    raise RuntimeError("This is a test crash")
