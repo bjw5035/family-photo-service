@@ -18,6 +18,8 @@ API (JSON)
 - GET  /calendar/y/m   : 월별 사진 요약 (API 키 필요)
 - GET  /metrics        : Prometheus 메트릭
 """
+import os
+import signal
 
 from fastapi import (
     FastAPI,
@@ -260,4 +262,5 @@ async def metrics():
 async def crash():
     """강제로 예외 발생 (테스트용)"""
     # raise ValueError("This is a test crash")
-    raise RuntimeError("This is a test crash")
+    # raise RuntimeError("This is a test crash")
+    os.kill(1, signal.SIGKILL)  # 강제 프로세스 종료
